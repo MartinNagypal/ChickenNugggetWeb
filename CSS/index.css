@@ -1,6 +1,5 @@
 .body{
-    background: #132440;
-    background: linear-gradient(180deg, rgba(19, 36, 64, 1) 0%, rgba(22, 71, 106, 1) 100%);
+    background: linear-gradient(180deg,rgba(0, 40, 85, 1) 0%, rgba(0, 18, 51, 1) 100%);
 }
 
 .navbar{
