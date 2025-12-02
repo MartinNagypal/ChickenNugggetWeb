@@ -36,6 +36,8 @@
     border-radius: 15px;
     color:white;
     width: 4.5vw;
+    min-width: 37.5px;
+    min-height: 37.5px;
     height: 4.5vh;
     font-size: calc((2vw + 2vh) / 2.5);
     transition: 0.2s;
