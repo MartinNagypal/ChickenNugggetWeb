@@ -1,5 +1,11 @@
-.body{
-    background: linear-gradient(180deg,rgba(83, 10, 105, 1) 0%, rgba(45, 49, 66, 1) 100%);
+body {
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(#8826a0 0.85px, transparent 0.85px),
+    linear-gradient(180deg, rgba(88, 24, 97, 1) 0%, rgba(30, 13, 66, 1) 100%);
+  background-size: 20px 20px, 100% 100%;
+  background-repeat: repeat, no-repeat;
+  background-attachment: scroll, fixed;
 }
 
 .navbar{
@@ -80,6 +86,7 @@
     color: white;
     padding: 1.5vw;
     transition: 0.3s;
+    height: 5000px;
 }
 
 .block:hover{
