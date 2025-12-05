@@ -1,11 +1,12 @@
-body, html{
+html{
     margin: 0;
     padding: 0;
 }
 
 body{
-    background: #53207a;
-    background: linear-gradient(180deg,rgba(83, 32, 122, 1) 0%, rgba(35, 11, 56, 1) 40%, rgba(35, 11, 56, 1) 60%, rgba(20, 10, 105, 1) 100%);
+    background: #2d004d;
+    background: linear-gradient(180deg,rgba(45, 0, 77, 1) 0%, rgba(13, 5, 23, 1) 40%, rgba(17, 6, 31, 1) 60%, rgba(20, 10, 105, 1) 100%);     
+    background-repeat: no-repeat;
 }
 
 /* ----------- Navbar ---------- */
@@ -79,6 +80,8 @@ body{
     justify-content: center;
     
 }
+
+/*Main info*/
  #mainInfo{
     max-width: 82.5vw;
     display:grid;
@@ -98,12 +101,30 @@ body{
     transition: 0.3s;
  }
 
+ /*Setup of name, logo, about me*/
  .mainInfoRealName{
-    font-size: 3.5vw;
+    font-size: 4vw;
+    padding-top: 7.5vh;
  }
 
  .mainInfoNugggetName{
     font-size: 1vw;
+ }
+
+ .mainInfoLogoImg{
+    height: 25vw;
+    padding-top: 5vh;
+ }
+
+ .mainInfoÜberMichHead{
+    font-size: 2vw;
+    padding-top: 2.5vh;
+ }
+
+ .mainInfoÜberMichText{
+    font-size: 1.3vw;
+    width: 60vw;
+    text-align:center;
  }
 
 
@@ -126,7 +147,7 @@ body{
 .block{
     background-color: rgba(47, 51, 74, 0.25);
     box-shadow: 0 0 5px 3px rgb(57, 61, 91);
-    font-size: clamp( 15px, calc((1.35vw + 1.35vh) / 2), 50px);
+    font-size: 1.3vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 15px;
     min-width: 307px;
