@@ -16,13 +16,12 @@ body{
     box-shadow: inset 0 0 25px rgba(148, 148, 148, 0.25);
     border-radius: 0px 0px 7.5px 7.5px;
     align-content: center;
-    min-height: 50px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    height: calc((5vw+5vh)/2);
+    height: calc((6vw+6vh)/2);
     backdrop-filter: blur(6px);
     display: grid;
     grid-template-columns: 20vw 58vw 20vw;
@@ -104,7 +103,7 @@ body{
  /*Setup of name, logo, about me*/
  .mainInfoRealName{
     font-size: 4vw;
-    padding-top: 7.5vh;
+    padding-top: 5vh;
  }
 
  .mainInfoNugggetName{
@@ -125,6 +124,11 @@ body{
     font-size: 1.3vw;
     width: 60vw;
     text-align:center;
+ }
+
+ .mainContentProjects{
+    font-size: 2.5vw;
+    padding-top: 5vh;
  }
 
 
