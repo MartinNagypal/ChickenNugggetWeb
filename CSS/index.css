@@ -1,12 +1,22 @@
 html{
     margin: 0;
     padding: 0;
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;
+    background: #2d004d;
 }
 
 body{
+    padding: 0;
+    margin: 0;
     background: #2d004d;
     background: linear-gradient(180deg,rgba(45, 0, 77, 1) 0%, rgba(13, 5, 23, 1) 40%, rgba(17, 6, 31, 1) 60%, rgba(20, 10, 105, 1) 100%);     
     background-repeat: no-repeat;
+}
+
+/* Hdie scrollbars */
+::-webkit-scrollbar {
+  display: none;
 }
 
 /* ----------- Navbar ---------- */
@@ -14,14 +24,13 @@ body{
 .navbar{
     background-color: rgba(19, 36, 64, 0.25);
     box-shadow: inset 0 0 25px rgba(148, 148, 148, 0.25);
-    border-radius: 0px 0px 7.5px 7.5px;
     align-content: center;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    height: calc((6vw+6vh)/2);
+    height: calc((5.25vw + 5.25vh)/2);
     backdrop-filter: blur(6px);
     display: grid;
     grid-template-columns: 20vw 58vw 20vw;
@@ -42,10 +51,10 @@ body{
     border-color: white;
     border-radius: 15px;
     color:white;
-    width: 4.5vw;
+    width: calc((6vw + 6vh)/2);
     min-width: 37.5px;
     min-height: 37.5px;
-    height: 4.5vh;
+    height: calc((3.75vw + 3.75vh)/2);
     font-size: calc((2vw + 2vh) / 2.5);
     transition: 0.2s;
 }
@@ -65,6 +74,8 @@ body{
     font-family: 'Comic Sans MS';
     color: white;
     margin-left: 2%;
+    justify-content: center;
+    align-content: center;
 }
 
 /* ----------- Main content ---------- */
@@ -75,7 +86,7 @@ body{
     grid-template-rows: auto;
     margin-top:calc(7.5vh + 5px);
     padding:2.5vw;
-    gap: 4vw;
+    gap: calc((4vw + 4vh)/2);
     justify-content: center;
     
 }
@@ -102,32 +113,32 @@ body{
 
  /*Setup of name, logo, about me*/
  .mainInfoRealName{
-    font-size: 4vw;
+    font-size: clamp(3.25rem, 4vmax, 5rem);
     padding-top: 5vh;
  }
 
  .mainInfoNugggetName{
-    font-size: 1vw;
+    font-size: clamp(0.5rem, 1vmax, 1.5rem);
  }
 
  .mainInfoLogoImg{
-    height: 25vw;
+    height: clamp(20rem, 20vmax, 25rem);
     padding-top: 5vh;
  }
 
  .mainInfoÜberMichHead{
-    font-size: 2vw;
+    font-size: clamp(1rem, 3vmax, 2rem);
     padding-top: 2.5vh;
  }
 
  .mainInfoÜberMichText{
-    font-size: 1.3vw;
+    font-size: clamp(0.75rem, 1.55vmax, 1.25rem);
     width: 60vw;
     text-align:center;
  }
 
  .mainContentProjects{
-    font-size: 2.5vw;
+    font-size: clamp(1rem, 3vmax, 2rem);
     padding-top: 5vh;
  }
 
@@ -136,29 +147,63 @@ body{
 /* main content blocks  */
 .mainContent{
     display: grid;
-    grid-template-columns: 40vw 40vw;
-    grid-auto-rows: calc(75vh - 5vh - 5px - 5vw - 5px);
-    gap: 4vw;
+    grid-template-columns: 37.5vw 37.5vw;
+    /* grid-auto-rows: calc(75vh - 5vh - 5px - 5vw - 5px); */
+    grid-auto-rows: auto;
+    gap: 5vw;
     justify-content: center;
+    height: auto;
 }
 
-@media(max-width:56em){
+/* @media(max-width:56em){
     .mainContent{
         grid-template-columns: 90vw;
     }
-}
+} */
 
 .block{
     background-color: rgba(47, 51, 74, 0.25);
     box-shadow: 0 0 5px 3px rgb(57, 61, 91);
-    font-size: 1.3vw;
+    font-size: clamp(0.5rem, 1.25vmax, 1rem);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 15px;
-    min-width: 307px;
-    overflow: auto;
+    min-width: 300px;
     color: white;
-    padding: 1.5vw;
+    padding: 6.5%;
     transition: 0.3s;
+
+    /* grid setup */
+    display: grid;
+    grid-template-columns: 95%;
+    grid-auto-rows: auto;
+    justify-content: center;
+    align-content: center;
+    gap: 5%;
+    height: auto;
+}
+
+.mainContentBlockUpperPart{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 2.5%;
+}
+
+.mainContentBlockLogoImg{
+    height: clamp(2.5rem, 3.5vmax, 4.5rem);
+    border-radius: 50%;
+    align-content: center;
+    justify-content: center;
+}
+
+.mainContentBlockName{
+    justify-content: center;
+    align-content: center;
+}
+
+.mainContentBlockDescription{
+    text-align:center;
 }
 
 .block:hover{
