@@ -1,39 +1,302 @@
-.body{
-    display:grid;
-    grid-template-rows: 5%;
-    height: 100vh;
-    gap: 2vh;
-    background-color: rgb(45, 50, 80);
+html{
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;
+    background: #1a043b;
 }
+
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(180deg,rgba(26, 4, 59, 1) 0%, rgba(5, 1, 18, 1) 40%, rgba(5, 1, 18, 1) 60%, rgba(7, 0, 82, 1) 100%);
+    background-repeat: no-repeat;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+/* Hdie scrollbars */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* ----------- Navbar ---------- */
 
 .navbar{
-    background-color: rgb(112, 119, 161);
-    box-shadow: inset 0 0 5px rgb(66, 71, 105);
-    border-radius: 10px;
+    background-color: rgba(26, 6, 73, 0.26);
+    box-shadow: inset 0 0 25px rgba(65, 65, 65, 0.062);
     align-content: center;
-    min-height: 25px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc((4vw + 4vh)/2);
+    backdrop-filter: blur(6px);
+    display: grid;
+    grid-template-columns: 20vw 58vw 20vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
-.navbar::after{
-    content:"";
-    position:absolute;
-    inset: -5px;
-    background: conic-gradient(from 180deg, transparent 50%, blue, purple, cyan, violet, blue);
-    z-index: -1;
-    border-radius: 10px;
+.navbarSocials{
+    justify-items: center;
+    align-items: center;
+    color:white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.navbarSocialButtons{
+    background: transparent;
+    border-style: solid;
+    border-color: white;
+    border-radius: 50px;
+    color:white;
+    width: calc((6vw + 6vh)/2);
+    min-width: 37.5px;
+    min-height: 37.5px;
+    height: calc((2.5vw + 2.5vh)/2);
+    font-size: calc((2vw + 2vh) / 2.5);
+    transition: 0.2s;
+}
+
+.navbarSocialButtons:hover{
+    transform: scale(0.9);
+    box-shadow: 0 0 5px 4px rgba(208, 206, 207, 0.5);
+}
+
+.navbarSocialButtons:active{
+    transform: scale(0.8);
+    box-shadow: 0 0 5px 4px rgba(208, 206, 207, 0.5);
 }
 
 .navbarWebsiteName{
-    font-size: 2.3vh;
+    font-size: clamp(20px, calc((2vw + 2vh) / 2), calc((2vw + 2vh)/2));
     font-family: 'Comic Sans MS';
     color: white;
     margin-left: 2%;
+    justify-content: center;
+    align-content: center;
 }
 
-.mainContent{
-    background-color: rgba(112, 119, 161, 0.5);
-    box-shadow: 0 0 8px 3px rgb(66, 71, 105);
+/* ----------- Main content ---------- */
+
+/* main content separator */
+.mainSeparator{
+    display:grid;
+    grid-template-rows: auto;
+    margin-top:calc(7.5vh + 5px);
+    padding:2.5vw;
+    gap: calc((4vw + 4vh)/2);
+    justify-content: center;
+    
+}
+
+/*Main info*/
+ #mainInfo{
+    max-width: 82.5vw;
+    display:grid;
+    grid-template-columns: 80vw;
+    grid-auto-rows: auto;
+    gap: 1vh;
+    min-width: 650px;
+    justify-items: center;
+
+    font-size: clamp( 15px, calc((1.35vw + 1.35vh) / 2), 50px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 15px;
-    margin: 10px;
+    min-width: 307px;
+    overflow: auto;
+    color: white;
+    padding: 1.5vw;
+    transition: 0.3s;
+ }
+
+ /*Setup of name, logo, about me*/
+ .mainInfoRealName{
+    font-size: clamp(3.25rem, 4vmax, 5rem);
+    padding-top: 5vh;
+ }
+
+ .mainInfoNugggetName{
+    font-size: clamp(0.5rem, 1vmax, 1.5rem);
+ }
+
+ .mainInfoLogoImg{
+    height: clamp(20rem, 20vmax, 25rem);
+    padding-top: 5vh;
+ }
+
+ .mainInfoÜberMichHead{
+    font-size: clamp(1rem, 3vmax, 2rem);
+    padding-top: 2.5vh;
+ }
+
+ .mainInfoÜberMichText{
+    font-size: clamp(0.75rem, 1.55vmax, 1.25rem);
+    width: 60vw;
+    text-align:center;
+    color: rgb(195, 195, 195);
+ }
+
+ .mainContentProjects{
+    font-size: clamp(1rem, 3vmax, 2rem);
+    padding-top: 5vh;
+ }
+
+
+
+/* main content blocks  */
+.mainContent{
+    display: grid;
+    grid-template-columns: 37.5vw 37.5vw;
+    /* grid-auto-rows: calc(75vh - 5vh - 5px - 5vw - 5px); */
+    grid-auto-rows: auto ;
+    gap: 5vw;
+    justify-content: center;
+    height: auto;
+}
+
+/* @media(max-width:56em){
+    .mainContent{
+        grid-template-columns: 90vw;
+    }
+} */
+
+.block{
+    background-color: rgba(47, 51, 74, 0.174);
+    box-shadow: 0 0 5px 3px rgb(57, 61, 91);
+    font-size: clamp(0.5rem, 1.25vmax, 1rem);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 15px;
+    min-width: 300px;
+    color: white;
+    padding: 6.5%;
+    transition: 0.3s;
+
+    /* grid setup */
+    display: grid;
+    grid-template-columns: 95%;
+    grid-auto-rows: auto;
+    justify-content: center;
+    align-content: start;
+    gap: 5%;
+    height: auto;
+}
+
+.mainContentBlockUpperPart{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 2.5%;
+}
+
+.mainContentBlockLogoImg{
+    height: clamp(2.5rem, 3.5vmax, 4.5rem);
+    border-radius: 50%;
+    align-content: center;
+    justify-content: center;
+}
+
+.mainContentBlockName{
+    justify-content: center;
+    align-content: center;
+}
+
+.mainContentBlockDownPart{
+    display: grid;
+    color: rgb(195, 195, 195);
+    height: auto;
+    margin-bottom: 5%;
+    
+}
+
+.mainContentBlockDescription{
+    text-align:center;
+}
+
+.block:hover{
+    box-shadow: 0 0 5px 4px rgba(208, 206, 207, 0.35);
+}
+
+ul {
+  display: inline-block;
+  text-align: left;
+  padding-left: 10%;
+}
+
+a{
+    color: white;
+}
+
+/* Skill cards */
+.skillCardContainer{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-auto-flow: column;
+    overflow: auto;
+    gap: 5vw;
+    max-width: 80vw;
+    padding: 5%;
+    padding-bottom: 10vh;
+    justify-content: center;
+}
+
+
+.skillCard{
+    font-size: 3rem;
+    border-radius: .2em;
+    text-align: center;
+    align-content: center;
+    min-width: 40vh;
+    color: white;
+
+    background-color: rgba(47, 51, 74, 0.174);
+    box-shadow: 0 0 5px 3px rgb(57, 61, 91);
+    font-size: clamp(0.5rem, 1.25vmax, 1rem);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 15px;
+
+    display:grid;
+    grid-template-columns: 95%;
+    grid-template-rows: auto auto 1fr;
+    min-height: fit-content;
+    height: 100%;
+    gap: 4%;
+    align-content: start;
+    justify-content: center;
+    padding: 5%;
+
+    font-size: clamp(0.75rem, 1.35vmax, 1.1rem);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(195, 195, 195);
+}
+
+.skillCardTopRow{
+    display: grid;
+    grid-template-columns: 10% auto;
+    font-size: calc((1.75vw + 1.75vh) / 2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 5%;
+    color: white;
+    align-content: center;
+}
+
+.skillCardSecondRow{
+    font-size: calc((2vw + 2vh) / 2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 5%;
+}
+
+.skillCardThirdRow{
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 2%;
+}
+
+.skillCard:hover{
+    box-shadow: 0 0 5px 4px rgba(208, 206, 207, 0.35);
 }
