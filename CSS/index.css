@@ -23,8 +23,8 @@ body{
 /* ----------- Navbar ---------- */
 
 .navbar{
-    background-color: rgba(19, 36, 64, 0.25);
-    box-shadow: inset 0 0 25px rgba(95, 95, 95, 0.157);
+    background-color: rgba(26, 6, 73, 0.26);
+    box-shadow: inset 0 0 25px rgba(65, 65, 65, 0.062);
     align-content: center;
     position: fixed;
     top: 0;
